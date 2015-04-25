@@ -4,3 +4,39 @@
 // Dependencies: 
 // Date created: 25/04/2015
 // ------------------------------------------------------------ 
+
+.form-lines{
+
+  .field-item{
+    position:relative;
+  }
+
+  label{
+    @include rem("font-size", 17);
+    text-align:left;
+    position:absolute;
+    left:0;
+    bottom:18px;
+    color:$grey;
+    @include single-transition(all, .2s, ease-in-out, 0);
+
+    &.focus{
+      bottom:40px;
+      @include opacity(0.7);
+      @include rem("font-size", 12);
+      @include single-transition(all, .2s, ease-in-out, 0);
+    }
+  }
+
+  input{
+    @include rem("font-size", 17);
+    text-align:left;
+    padding:25px 0 15px 0;
+    width:100%;
+    display:block;
+    border:none;
+    background: transparent;
+    border-bottom:1px solid $grey;
+    color:$grey;
+  }
+}
