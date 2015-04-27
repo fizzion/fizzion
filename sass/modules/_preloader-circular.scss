@@ -9,6 +9,8 @@
     border-right: 15px solid $lightGrey;
     border-bottom: 15px solid $lightGrey;
     border-left: 15px solid $grey;
+    @extend %hideText;
+    display:block;
     @extend %marginAuto;
     @include roundedCorners(50);
     width:50px;
