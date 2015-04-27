@@ -5,10 +5,10 @@
 // Date created: 25/04/2015
 // ------------------------------------------------------------ 
 .preloader-circular {
-    border-top: 15px solid $lightGrey;
-    border-right: 15px solid $lightGrey;
-    border-bottom: 15px solid $lightGrey;
-    border-left: 15px solid $grey;
+    border-top: 15px solid $light;
+    border-right: 15px solid $light;
+    border-bottom: 15px solid $light;
+    border-left: 15px solid $medium;
     @extend %hideText;
     display:block;
     @extend %marginAuto;
