@@ -5,5 +5,14 @@
 // Date created: 25/04/2015
 // ------------------------------------------------------------ 
 .preloader-circular {
-    
+    border-top: 15px solid $lightGrey;
+    border-right: 15px solid $lightGrey;
+    border-bottom: 15px solid $lightGrey;
+    border-left: 15px solid $grey;
+    @extend %marginAuto;
+    @include roundedCorners(50);
+    width:50px;
+    height:50px;
+    @include animation('spin 1.2s infinite linear');
 }
+@include keyframes(spin) {0%{ -webkit-transform: rotate(0deg); transform: rotate(0deg); } 100%{ -webkit-transform: rotate(360deg); transform: rotate(360deg); }}
