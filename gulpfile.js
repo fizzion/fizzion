@@ -7,7 +7,7 @@ gulp.task('sass', function () {
   return gulp.src('sass/**/*.scss')
     .pipe(sass())
     .pipe(minifyCSS())
-    .pipe(gulp.dest('./css/'));
+    .pipe(gulp.dest('./build/css/'));
 });
 
 gulp.task('scripts', function() {
@@ -16,7 +16,7 @@ gulp.task('scripts', function() {
       insertGlobals : true,
       debug : !gulp.env.production
     }))
-    .pipe(gulp.dest('./js/build'))
+    .pipe(gulp.dest('./build/js/'))
 });
 
 gulp.task('watch', function() {
