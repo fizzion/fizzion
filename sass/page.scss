@@ -5,7 +5,7 @@
 @import "base/variables";
 @import "base/extends";
 @import "base/reset";
-@import "base/themes/grey";
+@import "base/themes/watermelon";
 
 // ----------------------------------------------------------------------
   // Layout
@@ -17,6 +17,7 @@
 // ----------------------------------------------------------------------
 @import "modules/preloader-circular";
 @import "modules/preloader-linear";
+@import "modules/form";
 
 // ----------------------------------------------------------------------
 	// Views

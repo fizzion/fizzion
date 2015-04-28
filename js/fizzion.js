@@ -1,0 +1,1 @@
+var form = require('./modules/fizzion-form')();

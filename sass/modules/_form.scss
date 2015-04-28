@@ -17,7 +17,7 @@
     position:absolute;
     left:0;
     bottom:18px;
-    color:$grey;
+    color:$formLabel;
     @include single-transition(all, .2s, ease-in-out, 0);
 
     &.focus{
@@ -36,7 +36,7 @@
     display:block;
     border:none;
     background: transparent;
-    border-bottom:1px solid $grey;
-    color:$grey;
+    border-bottom:1px solid $formLabel;
+    color:$formLabel;
   }
 }
