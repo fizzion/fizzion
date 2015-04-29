@@ -1,7 +1,20 @@
 var gulp = require('gulp'),
   minifyCSS = require('gulp-minify-css'),
   sass = require('gulp-sass'),
-  browserify = require('gulp-browserify');
+  browserify = require('gulp-browserify'),
+  browserSync = require('browser-sync'),
+  path = require('path');
+
+gulp.task('browser-sync', function() {
+  browserSync({
+    server: {
+      baseDir: path.join(__dirname, 'build')
+    },
+    host: 'localhost',
+    port: 1337,
+    open: false
+  });
+});
 
 gulp.task('sass', function () {
   return gulp.src('sass/**/*.scss')
@@ -19,7 +32,7 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('./build/js/'))
 });
 
-gulp.task('watch', function() {
+gulp.task('watch', ['browser-sync'], function() {
   gulp.watch('sass/**/*.scss', ['sass']);
   gulp.watch('js/**/*.js', ['scripts']);
 });
