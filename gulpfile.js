@@ -5,6 +5,9 @@ var gulp = require('gulp'),
   browserSync = require('browser-sync'),
   uglify = require('gulp-uglify'),
   rename = require('gulp-rename'),
+  jshint = require('gulp-jshint'),
+  jshintStyle = require('jshint-stylish'),
+  replace = require('gulp-replace'),
   path = require('path');
 
 gulp.task('browser-sync', function() {
@@ -33,6 +36,13 @@ gulp.task('sass', function () {
     .pipe(gulp.dest('./build/css/'));
 });
 
+gulp.task('jshint', function() {
+  return gulp.src('./js/**/*.js')
+    .pipe(jshint())
+    .pipe(jshint.reporter(jshintStyle))
+    .pipe(jshint.reporter('fail'))
+});
+
 gulp.task('scripts', function() {
   gulp.src('js/fizzion.js')
     .pipe(browserify({
@@ -40,17 +50,17 @@ gulp.task('scripts', function() {
       debug : !gulp.env.production
     }))
     .pipe(gulp.dest('./build/js/'))
-    return gulp.src('./build/js/*.js')
     .pipe(uglify())
     .pipe(rename({
 	     extname: '.min.js'
 	   }))
+    .pipe(replace('./build/js/*.min.js'))
     .pipe(gulp.dest('./build/js'));
 });
 
 gulp.task('watch', ['browser-sync'], function() {
   gulp.watch('sass/**/*.scss', ['sass']);
-  gulp.watch('js/**/*.js', ['scripts']);
+  gulp.watch('js/**/*.js', ['jshint', 'scripts']);
   gulp.watch('views/**/*.html', ['html']);
 });
 
