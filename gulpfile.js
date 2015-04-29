@@ -33,6 +33,10 @@ gulp.task('html', function(){
 gulp.task('sass', function () {
   return gulp.src('sass/**/*.scss')
     .pipe(sass())
+    .pipe(
+      // @TODO (@bitfyre) Make this configureable.
+      autoprefixer('last 2 version', '> 1%', 'ie 8', 'ie 9')
+    )
     .pipe(minifyCSS())
     .pipe(gulp.dest('./build/css/'));
 });
