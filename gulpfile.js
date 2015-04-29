@@ -1,14 +1,15 @@
 var gulp = require('gulp'),
-  minifyCSS = require('gulp-minify-css'),
-  sass = require('gulp-sass'),
+  autoprefixer = require('gulp-autoprefixer'),
   browserify = require('gulp-browserify'),
   browserSync = require('browser-sync'),
-  uglify = require('gulp-uglify'),
-  rename = require('gulp-rename'),
   jshint = require('gulp-jshint'),
   jshintStyle = require('jshint-stylish'),
+  minifyCSS = require('gulp-minify-css'),
+  path = require('path'),
+  rename = require('gulp-rename'),
   replace = require('gulp-replace'),
-  path = require('path');
+  sass = require('gulp-sass'),
+  uglify = require('gulp-uglify');
 
 gulp.task('browser-sync', function() {
   browserSync({
@@ -32,6 +33,10 @@ gulp.task('html', function(){
 gulp.task('sass', function () {
   return gulp.src('sass/**/*.scss')
     .pipe(sass())
+    .pipe(
+      // @TODO (@bitfyre) Make this configureable.
+      autoprefixer('last 2 version', '> 1%', 'ie 8', 'ie 9')
+    )
     .pipe(minifyCSS())
     .pipe(gulp.dest('./build/css/'));
 });
