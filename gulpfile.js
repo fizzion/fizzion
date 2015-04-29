@@ -3,6 +3,8 @@ var gulp = require('gulp'),
   sass = require('gulp-sass'),
   browserify = require('gulp-browserify'),
   browserSync = require('browser-sync'),
+  uglify = require('gulp-uglify'),
+  rename = require('gulp-rename'),
   path = require('path');
 
 gulp.task('browser-sync', function() {
@@ -38,6 +40,12 @@ gulp.task('scripts', function() {
       debug : !gulp.env.production
     }))
     .pipe(gulp.dest('./build/js/'))
+    return gulp.src('./build/js/*.js')
+    .pipe(uglify())
+    .pipe(rename({
+	     extname: '.min.js'
+	   }))
+    .pipe(gulp.dest('./build/js'));
 });
 
 gulp.task('watch', ['browser-sync'], function() {
