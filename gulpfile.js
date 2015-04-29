@@ -60,7 +60,7 @@ gulp.task('scripts', function() {
 
 gulp.task('watch', ['browser-sync'], function() {
   gulp.watch('sass/**/*.scss', ['sass']);
-  gulp.watch('js/**/*.js', ['scripts']);
+  gulp.watch('js/**/*.js', ['jshint', 'scripts']);
   gulp.watch('views/**/*.html', ['html']);
 });
 
