@@ -5,6 +5,7 @@ var gulp = require('gulp'),
   jshint = require('gulp-jshint'),
   jshintStyle = require('jshint-stylish'),
   minifyCSS = require('gulp-minify-css'),
+  notify = require('gulp-notify'),
   path = require('path'),
   rename = require('gulp-rename'),
   replace = require('gulp-replace'),
@@ -38,7 +39,8 @@ gulp.task('sass', function () {
       autoprefixer('last 2 version', '> 1%', 'ie 8', 'ie 9')
     )
     .pipe(minifyCSS())
-    .pipe(gulp.dest('./build/css/'));
+    .pipe(gulp.dest('./build/css/'))
+    .pipe(notify({ message: 'CSS complete' }));
 });
 
 gulp.task('jshint', function() {
@@ -46,6 +48,7 @@ gulp.task('jshint', function() {
     .pipe(jshint())
     .pipe(jshint.reporter(jshintStyle))
     .pipe(jshint.reporter('fail'))
+    .pipe(notify({ message: 'JSHint complete' }));
 });
 
 gulp.task('scripts', function() {
@@ -60,7 +63,8 @@ gulp.task('scripts', function() {
 	     extname: '.min.js'
 	   }))
     .pipe(replace('./build/js/*.min.js'))
-    .pipe(gulp.dest('./build/js'));
+    .pipe(gulp.dest('./build/js'))
+    .pipe(notify({ message: 'JS files complete' }));
 });
 
 gulp.task('watch', ['browser-sync'], function() {
