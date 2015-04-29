@@ -1,1 +1,1 @@
-var form = require('./modules/fizzion-form')();
+var form = require('./modules/fizzion-form')();
