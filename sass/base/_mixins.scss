@@ -16,13 +16,13 @@
 
 // ----------------------------------------------------------------------
 @import "mixins/animate-link";
-@import "mixins/animations";
-@import "mixins/backface-visibility";
-@import "mixins/keyframes";
-@import "mixins/single-transform";
-@import "mixins/transform";
-@import "mixins/transitions";
-@import "mixins/translate";
+@import "mixins/css3/animations";
+@import "mixins/css3/backface-visibility";
+@import "mixins/css3/keyframes";
+@import "mixins/css3/single-transform";
+@import "mixins/css3/transform";
+@import "mixins/css3/transitions";
+@import "mixins/css3/translate";
 
 // ----------------------------------------------------------------------
 
@@ -38,16 +38,16 @@
   // Gradients
 
 // ----------------------------------------------------------------------
-@import "mixins/linear-gradient";
-@import "mixins/linear-gradient-angle";
+@import "mixins/css3/linear-gradient";
+@import "mixins/css3/linear-gradient-angle";
 
 // ----------------------------------------------------------------------
 
   // Layout
 
 // ----------------------------------------------------------------------
-@import "mixins/background-cover";
-@import "mixins/box-model";
+@import "mixins/css3/background-cover";
+@import "mixins/css3/box-model";
 @import "mixins/clearfix";
 @import "mixins/inline-block";
 
@@ -65,12 +65,12 @@
   // Styles
 
 // ----------------------------------------------------------------------
-@import "mixins/box-shadow";
-@import "mixins/inner-shadow";
+@import "mixins/css3/box-shadow";
+@import "mixins/css3/inner-shadow";
 @import "mixins/opacity";
 @import "mixins/placeholder";
-@import "mixins/rounded-corners";
-@import "mixins/text-shadow";
+@import "mixins/css3/rounded-corners";
+@import "mixins/css3/text-shadow";
 @import "mixins/triangles";
 
 // ----------------------------------------------------------------------
